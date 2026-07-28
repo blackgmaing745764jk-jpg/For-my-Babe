@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love ❤️</title>
+    <style>
+        body { font-family: 'Poppins', sans-serif; background: #ffe6e8; text-align: center; padding-top: 80px; color: #d63384; margin: 0; }
+        .card { background: white; padding: 30px; border-radius: 20px; display: inline-block; box-shadow: 0 10px 20px rgba(0,0,0,0.1); width: 80%; max-width: 350px; }
+        input { padding: 12px; border-radius: 10px; border: 1px solid #ffb6c1; font-size: 16px; text-align: center; margin-top: 15px; width: 80%; }
+        button { padding: 12px 25px; background: #ff4d6d; color: white; border: none; border-radius: 10px; cursor: pointer; margin-top: 15px; font-size: 16px; font-weight: bold; }
+        #secret-content { display: none; margin-top: 20px; padding: 20px; }
+        img { width: 100%; max-width: 300px; border-radius: 15px; margin-top: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+
+    <div class="card" id="login-box">
+        <h2>🔒 Unlock My Heart</h2>
+        <p>ငါတို့စတွဲခဲ့တဲ့ ရက်စွဲလေးကို ထည့်ပါဦး (DDMMYYYY):</p>
+        <input type="password" id="passcode" placeholder="e.g. 15082023"> <br>
+        <button onclick="checkDate()">Open Surprise ❤️</button>
+        <p id="error" style="color: red; display: none; font-size: 14px; margin-top: 10px;">Passcode မှားနေတယ်နော် သဲလေး! 🥺</p>
+    </div>
+
+    <!-- Surprise ပေါ်လာမည့်နေရာ -->
+    <div id="secret-content">
+        <h1>Happy Anniversary My Love! 🥰🎉</h1>
+        <p>နင်နဲ့တွေ့ခဲ့ရတာ ငါ့ဘဝရဲ့ အကောင်းဆုံးအရာပါပဲ...</p>
+        
+        <!-- ပုံနေရာ (ကြိုက်တဲ့ပုံ Link ပြောင်းလို့ရပါတယ်) -->
+        <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=500" alt="Love Image">
+        
+        <p style="font-size: 18px; font-weight: bold; margin-top: 20px;">အမြဲတမ်း ချစ်နေမယ်နော် ❤️</p>
+    </div>
+
+    <script>
+        function checkDate() {
+            // 👇 အောက်က "15082023" နေရာမှာ မိမိ Anniversary Date ချိန်ပေးပါ (ဥပမာ - 01012024)
+            var correctDate = "04072026"
+            
+            var userInput = document.getElementById("passcode").value;
+
+            if (userInput === correctDate) {
+                document.getElementById("login-box").style.display = "none";
+                document.getElementById("secret-content").style.display = "block";
+            } else {
+                document.getElementById("error").style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
