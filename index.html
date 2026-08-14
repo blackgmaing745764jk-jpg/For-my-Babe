@@ -7,135 +7,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; }
-        body {
-            font-family: 'Padauk', sans-serif;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%);
-            min-height: 100vh;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            text-align: center;
-            color: #333;
-        }
-        .card {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 30px 20px;
-            border-radius: 25px;
-            box-shadow: 0 15px 35px rgba(255, 77, 109, 0.2);
-            width: 100%;
-            max-width: 400px;
-            border: 2px solid #fff;
-        }
+        body { font-family: 'Padauk', sans-serif; background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%); min-height: 100vh; margin: 0; display: flex; justify-content: center; align-items: center; padding: 20px; text-align: center; color: #333; }
+        .card { background: rgba(255, 255, 255, 0.95); padding: 30px 20px; border-radius: 25px; box-shadow: 0 15px 35px rgba(255, 77, 109, 0.2); width: 100%; max-width: 400px; border: 2px solid #fff; }
         h2 { color: #ff4d6d; margin-bottom: 15px; font-weight: 700; font-size: 20px; }
         p { line-height: 1.8; font-size: 16px; color: #555; }
-        
-        .btn-group {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .yes-btn { 
-            padding: 12px 25px; 
-            background: linear-gradient(45deg, #ff4d6d, #ff758f); 
-            color: white; 
-            border: none; 
-            border-radius: 25px; 
-            cursor: pointer; 
-            font-size: 16px; 
-            font-weight: bold; 
-            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
-            transition: transform 0.3s ease;
-        }
-        .no-btn {
-            padding: 12px 25px;
-            background: #e0e0e0;
-            color: #666;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-        }
-
+        .btn-group { margin-top: 20px; display: flex; justify-content: center; gap: 15px; align-items: center; flex-wrap: wrap; }
+        .yes-btn { padding: 12px 25px; background: linear-gradient(45deg, #ff4d6d, #ff758f); color: white; border: none; border-radius: 25px; cursor: pointer; font-size: 16px; font-weight: bold; box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4); transition: transform 0.3s ease; }
+        .no-btn { padding: 12px 25px; background: #e0e0e0; color: #666; border: none; border-radius: 25px; cursor: pointer; font-size: 16px; font-weight: bold; }
         .step-box { display: none; }
-
-        /* Cake & Candle CSS */
-        .cake-container {
-            margin-top: 20px;
-            position: relative;
-            cursor: pointer;
-        }
-        .cake {
-            width: 150px;
-            height: 120px;
-            margin: 0 auto;
-            position: relative;
-            animation: dropCake 1s ease-out forwards;
-        }
-        @keyframes dropCake {
-            0% { transform: translateY(-100px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
-        .plate {
-            width: 180px;
-            height: 10px;
-            background: #ccc;
-            border-radius: 10px;
-            margin: 0 auto;
-        }
-        .layer-bottom {
-            width: 150px;
-            height: 40px;
-            background: #ff758f;
-            border-radius: 10px 10px 0 0;
-            margin: 0 auto;
-        }
-        .layer-top {
-            width: 110px;
-            height: 35px;
-            background: #ffb3c1;
-            border-radius: 10px 10px 0 0;
-            margin: 0 auto;
-        }
-        .candle {
-            width: 12px;
-            height: 35px;
-            background: #fff;
-            margin: 0 auto;
-            border-radius: 3px;
-            position: relative;
-        }
-        .flame {
-            width: 12px;
-            height: 18px;
-            background: #ff9e00;
-            border-radius: 50% 50% 20% 20%;
-            position: absolute;
-            top: -18px;
-            left: 0;
-            box-shadow: 0 0 10px #ff9e00;
-            animation: flicker 0.5s infinite alternate;
-        }
-        @keyframes flicker {
-            0% { opacity: 0.8; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1.1); }
-        }
-        .wishes {
-            font-size: 22px;
-            font-weight: bold;
-            color: #ff4d6d;
-            margin-top: 15px;
-        }
+        .cake-container { margin-top: 20px; position: relative; cursor: pointer; }
+        .cake { width: 150px; height: 120px; margin: 0 auto; position: relative; animation: dropCake 1s ease-out forwards; }
+        @keyframes dropCake { 0% { transform: translateY(-100px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+        .plate { width: 180px; height: 10px; background: #ccc; border-radius: 10px; margin: 0 auto; }
+        .layer-bottom { width: 150px; height: 40px; background: #ff758f; border-radius: 10px 10px 0 0; margin: 0 auto; }
+        .layer-top { width: 110px; height: 35px; background: #ffb3c1; border-radius: 10px 10px 0 0; margin: 0 auto; }
+        .candle { width: 12px; height: 35px; background: #fff; margin: 0 auto; border-radius: 3px; position: relative; }
+        .flame { width: 12px; height: 18px; background: #ff9e00; border-radius: 50% 50% 20% 20%; position: absolute; top: -18px; left: 0; box-shadow: 0 0 10px #ff9e00; animation: flicker 0.5s infinite alternate; }
+        @keyframes flicker { 0% { opacity: 0.8; transform: scale(0.9); } 100% { opacity: 1; transform: scale(1.1); } }
+        .wishes { font-size: 22px; font-weight: bold; color: #ff4d6d; margin-top: 15px; }
     </style>
 </head>
 <body id="mainBody">
-
-    <!-- Step 1 -->
     <div class="card" id="step-1">
         <h2>နင့်အတွက် Birthday script ရေးထားတယ် 💖</h2>
         <div class="btn-group">
@@ -143,66 +35,41 @@
             <button class="no-btn" onclick="growYes()">မဖတ်ဘူး 😜</button>
         </div>
     </div>
-
-    <!-- Step 2 -->
     <div class="card step-box" id="step-2">
         <p>17 နှစ်ပြည့် Happy birthday ပါ သူငယ်ချင်းလေးရေ မွေးနေ့မှာ ပျော်ရွှင်ပါစေ ချစ်ရသူတွေ မိသားစုနဲ့လည်း သက်ဆုံးတိုင် အရိုးဆွေးသည်အထိပေါင်းဖက်ရပါစေ။ ကြံတိုင်းဆောင်လုပ်တိုင်းအောင်နိုင်တဲ့ လူတစ်ယောက်ဖြစ်ပါစေ။ပျော်ရွှင်စရာမွေးနေ့ လေးမှစိတ်သစ် ကိုယ်သစ်နဲ့ အရာရာကို အောင်အောင်မြင်မြင်ဖြတ်သန်းနိုင်ပါစေ။လိုအင်ဆန္ဒတစ်လုံးတစ်ဝကြီးပြည့်ဝပါစေ။ 🎂✨</p>
-        
         <p style="margin-top: 20px; font-weight: bold; color: #ff4d6d;">နင့်အတွက် Birthday Cake လေးလုပ်ပေးထားတယ် ဖရောင်းတိုင်လေးမှုတ်ပါအုံး 🕯️</p>
         <button class="yes-btn" onclick="goToStep3()">မှုတ်မယ် ✨</button>
     </div>
-
-    <!-- Step 3 -->
     <div class="card step-box" id="step-3">
         <div class="wishes">Happy Birthday 🎉</div>
-        
         <div class="cake-container">
-            <div class="candle">
-                <div class="flame" id="flame"></div>
-            </div>
+            <div class="candle"><div class="flame" id="flame"></div></div>
             <div class="layer-top"></div>
             <div class="layer-bottom"></div>
             <div class="plate"></div>
         </div>
-
-        <p id="instruction" style="font-size: 14px; color: #888; margin-top: 20px;">
-            ဖရောင်းတိုင်မီးငြိမ်းအောင် ဖုန်းလေးရဲ့တစ်နေရာရာကို နှိပ်လိုက်ပါ 👇
-        </p>
+        <p id="instruction" style="font-size: 14px; color: #888; margin-top: 20px;">ဖရောင်းတိုင်မီးငြိမ်းအောင် ဖုန်းလေးရဲ့တစ်နေရာရာကို နှိပ်လိုက်ပါ 👇</p>
         <h2 id="finalWish" style="display: none; margin-top: 20px; font-size: 24px;">Happy birthday ပါ မဖူးပြည့်စုံ 💖✨</h2>
     </div>
-
     <script>
         let scale = 1;
-
-        function growYes() {
-            scale += 0.4;
-            document.getElementById('yesBtn').style.transform = `scale(${scale})`;
-        }
-
-        function goToStep2() {
-            document.getElementById('step-1').style.display = 'none';
-            document.getElementById('step-2').style.display = 'block';
-        }
-
+        function growYes() { scale += 0.4; document.getElementById('yesBtn').style.transform = `scale(${scale})`; }
+        function goToStep2() { document.getElementById('step-1').style.display = 'none'; document.getElementById('step-2').style.display = 'block'; }
         function goToStep3() {
             document.getElementById('step-2').style.display = 'none';
             document.getElementById('step-3').style.display = 'block';
-            
-            // Screen ကို နှိပ်ရင် မီးငြိမ်းမယ့် Event ထည့်ခြင်း
-            setTimeout(() => {
-                document.getElementById('mainBody').addEventListener('click', blowCandle);
-            }, 300);
+            setTimeout(() => { document.getElementById('mainBody').addEventListener('click', blowCandle); }, 300);
         }
-
         function blowCandle() {
             let flame = document.getElementById('flame');
             if (flame.style.display !== 'none') {
-                flame.style.display = 'none'; // မီးငြိမ်းသွားမည်
+                flame.style.display = 'none';
                 document.getElementById('instruction').style.display = 'none';
-                document.getElementById('finalWish').style.display = 'block'; // မဖူးပြည့်စုံ စာသားပေါ်လာမည်
+                document.getElementById('finalWish').style.display = 'block';
             }
         }
     </script>
-
 </body>
 </html>
+
+    
