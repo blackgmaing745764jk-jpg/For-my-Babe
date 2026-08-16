@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorry Elder Sister ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Padauk', sans-serif;
+            background: linear-gradient(135deg, #a8edf7 0%, #fed6e3 100%);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            color: #333;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px 20px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            border: 2px solid #fff;
+        }
+        h2 { color: #ff477e; margin-bottom: 15px; font-weight: 700; font-size: 20px; line-height: 1.6; }
+        p { line-height: 1.8; font-size: 16px; color: #444; text-align: left; }
+        
+        .btn-group {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .yes-btn { 
+            padding: 12px 25px; 
+            background: linear-gradient(45deg, #ff477e, #ff70a6); 
+            color: white; 
+            border: none; 
+            border-radius: 25px; 
+            cursor: pointer; 
+            font-size: 16px; 
+            font-weight: bold; 
+            box-shadow: 0 5px 15px rgba(255, 71, 126, 0.4);
+            transition: transform 0.3s ease;
+        }
+        .no-btn {
+            padding: 12px 25px;
+            background: #e0e0e0;
+            color: #666;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer; 
+            font-size: 16px; 
+            font-weight: bold;
+        }
+
+        .step-box { display: none; }
+        .final-text {
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            color: #ff477e;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Step 1 -->
+    <div class="card" id="step-1">
+        <h2>အမ ကျွန်တော်ရေးထားတဲ့စာလေးဖတ်ချင်လား 🥺</h2>
+        <div class="btn-group">
+            <button class="yes-btn" id="yesBtn" onclick="goToStep2()">ဖတ်ချင်တယ် 🥰</button>
+            <button class="no-btn" onclick="growYes()">မဖတ်ချင်ဘူး 😜</button>
+        </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="card step-box" id="step-2">
+        <p>
+            အမ စိတ်မဆိုးပါနဲ့တော့နော် ကျွန်တော်တို့ကအခုမှစစတွေ့တာလေ ကျွန်တော်မရည်ရွယ်ပါဘူးအမရယ် ကျွန်တော်တောင်းပန်ပါတယ်။ ကျွန်တော်စိတ်ထဲကလည်းမပါ ပါဘူး ဒါပေမဲ့ အမက အကြီးလေ အဲ့လိုစိတ်မဆိုးရဘူးလေနော် အမ စိတ်ဆိုးပြေပေးပေါနော်အမ ကျွန်တော်တောင်းပန်ပါတယ်။ ကျွန်တော်ကငယ်ပါသေးတယ် ကျွန်တော်ကအငယ်လေ အမလျှော့ပေးရမဲ့ဟာကို အမဆုံးမရမယ်လေအမကလည်း
+        </p>
+        <div class="final-text">
+            စိတ်မဆိုးနဲ့တော့နော် 🥺💖
+        </div>
+    </div>
+
+    <script>
+        let scale = 1;
+
+        function growYes() {
+            scale += 0.4;
+            document.getElementById('yesBtn').style.transform = `scale(${scale})`;
+        }
+
+        function goToStep2() {
+            document.getElementById('step-1').style.display = 'none';
+            document.getElementById('step-2').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
