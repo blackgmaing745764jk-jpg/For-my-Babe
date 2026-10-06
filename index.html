@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Babe ❤️</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+            padding: 20px;
+        }
+        /* Floating hearts background */
+        .heart-bg {
+            position: absolute;
+            color: rgba(244, 63, 94, 0.2);
+            font-size: 20px;
+            animation: floatUp 4s linear infinite;
+            z-index: 1;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0.8); opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+        }
+        .container {
+            background: #fff;
+            border: 2px solid #f43f5e;
+            width: 100%;
+            max-width: 420px;
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(244, 63, 94, 0.15);
+            position: relative;
+            z-index: 10;
+        }
+        .step { display: none; }
+        .step.active { display: block; }
+        
+        /* Step 1 Login */
+        .warning-text {
+            color: #ec4899;
+            font-size: 14px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+        .input-group input:focus { border-color: #f43f5e; }
+        .error-msg {
+            color: #ef4444;
+            font-size: 13px;
+            margin-bottom: 15px;
+            display: none;
+        }
+        .btn {
+            background: #f43f5e;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(244, 63, 94, 0.4);
+        }
+        .btn:hover { background: #e11d48; }
+
+        /* Step 2 Letter */
+        .photo-frame {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #f43f5e;
+            margin: 0 auto 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .envelope-container {
+            cursor: pointer;
+            margin: 25px 0;
+            transition: 0.3s;
+        }
+        .envelope-container:hover { transform: scale(1.05); }
+        .envelope-icon { font-size: 60px; }
+        .instruction-txt {
+            font-size: 14px;
+            color: #e11d48;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .love-letter {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 20px;
+            background: #fff1f2;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #f43f5e;
+            display: none;
+        }
+        .signature {
+            text-align: right;
+            font-weight: bold;
+            color: #f43f5e;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* Step 3 Gifts */
+        .gift-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .gift-box {
+            background: #fff1f2;
+            border: 1px solid #fda4af;
+            padding: 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+            color: #be123c;
+        }
+        .gift-box.selected {
+            background: #f43f5e;
+            color: white;
+            border-color: #e11d48;
+        }
+        .tg-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #0284c7;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .tg-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <!-- Background Hearts Generator -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-bg');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 4000);
+        }
+        setInterval(createHeart, 400);
+    </script>
+
+    <div class="container">
+        <!-- STEP 1: LOGIN -->
+        <div class="step active" id="step1">
+            <p class="warning-text">"babe ရေ မှန်အောင်ဖြည့်နော် မှားရင်မရဘူးနော်"</p>
+            <div class="input-group">
+                <label>Anniversary date ထည့်ရန် (ဥပမာ - 29.9.2026)</label>
+                <input type="text" id="dateInput" placeholder="ရက်စွဲထည့်ပါ">
+            </div>
+            <div class="input-group">
+                <label>ကိုကို့အသက်ကို ထည့်ရန်</label>
+                <input type="password" id="ageInput" placeholder="အသက်ထည့်ပါ">
+            </div>
+            <div class="error-msg" id="errorMsg">တစ်ခုခုတော့ မှားနေတယ်နော် မှန်အောင်ဖြည့်နော်!</div>
+            <button class="btn" onclick="checkLogin()">ရှေ့ဆက်ရန်</button>
+        </div>
+
+        <!-- STEP 2: LETTER & PHOTO -->
+        <div class="step" id="step2">
+            <div class="photo-frame">
+                <!-- သင့်ကောင်မလေးရဲ့ပုံ သို့မဟုတ် ပုံလင့်ခ်ထည့်ရန် -->
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300" alt="Babe Photo">
+            </div>
+            <div class="envelope-container" onclick="openEnvelope()">
+                <div class="envelope-icon">💌</div>
+                <div class="instruction-txt">"ဖတ်ရန်စာအိတ်ကိုနှိပ်ပါသဲလေး"</div>
+            </div>
+            <p style="font-size: 14px; font-weight: bold; color: #f43f5e; margin-bottom: 10px;" id="letterTitle">ကိုကိုရေးထားတဲ့စာလေးတွေရှိတယ် ဖတ်ကြည့်ပါဦး</p>
+            
+            <div class="love-letter" id="loveLetterText">
+                ကိုကို့အပေါ်မှာ အခုလိုအမြဲတမ်း သည်းခံစိတ်ရှည်ပြီး အမြဲတမ်းအလျှော့ပေးနေခဲ့လို့ ကိုကိုအရမ်းကိုကျေးဇူးတင်ပါတယ်။ ဒီထက်မကလည်း ဆက်ချစ်ပေးပါ babe ရေ။ ဆိုးအတူကောင်းဖက် အေးအတူပူအမျှ သက်ဆုံးတိုင်အနားမှာ ရှိနေပေးပါ။ အခုလိုလုပ်ပေးတာလည်း သိပ်တန်ဖိုးမကြီးပေမဲ့ ကိုကို့ရဲ့စေတနာမေတ္တာနဲ့ အချစ်စစ်တို့ ပါဝင်နေပါတယ်။ လူပေါင်းအများကြီးရှိတဲ့ထဲက babe ကို ကိုကိုရွေးချယ်လိုက်သလို babe ကလည်း ကိုကို့ကိုရွေးချယ်ပေးခဲ့လို့ ထပ်ကျေးဇူးတင်ပါရစေ။
+            </div>
+            <div class="signature" id="signatureText">ချစ်စုဝေ</div>
+            
+            <button class="btn" id="toStep3Btn" style="display: none; margin-top: 15px;" onclick="goToStep3()">ရှေ့ဆက်ရန်</button>
+        </div>
+
+        <!-- STEP 3: GIFT BOMBS -->
+        <div class="step" id="step3">
+            <p style="font-size: 13px; color: #be123c; font-weight: bold; margin-bottom: 10px;">
+                Babe ရေ လက်ဆောင်ဗုံးလေးတွေထဲမှာ လက်ဆောင်လေးတွေပါတယ်နော် ဗလာမပါဘူး လက်ဆောင်လေးတွေပါ သေချာလေးရွေးနော် ကြိုက်ရာသုံးခုရွေး
+            </p>
+            <p style="font-size: 11px; color: #666; margin-bottom: 10px;">ရွေးပြီးရင် Ss ဓာတ်ပုံရိုက်ပြီး ရွေးထားတာလေးတွေ ပို့ပေးနော်</p>
+            
+            <div class="gift-grid">
+                <div class="gift-box" onclick="selectGift(this)">🎁 ဗုံး ၁ - အာဘွားးမွမွ</div>
+                <div class="gift-box" onclick="selectGift(this)">🎁 ဗုံး ၂ - အမှတ်တရလက်ဆောင်</div>
+                <div class="gift-box" onclick="selectGift(this)">🎁 ဗုံး ၃ - မုန့်</div>
+                <div class="gift-box" onclick="selectGift(this)">🎁 ဗုံး ၄ - မုန့်ဖိုး</div>
+                <div class="gift-box" onclick="selectGift(this)">🎁 ဗုံး ၅ - အထူးလက်ဆောင်</div>
+            </div>
+
+            <p style="font-size: 11px; color: #ef4444; font-weight: bold; margin-top: 10px;" id="giftWarning">ရွေးပြီး SS ရိုက်ဖို့မမေ့နဲ့နော် (၃ ခုပြည့်ပါပြီ)</p>
+
+            <div style="margin-top: 15px;">
+                <p style="font-size: 12px; color: #444; margin-bottom: 5px;">သဲလေးရေ ကိုကို့ Tg acc ကိုလာပြီး babe ရွေးထားတာလေးတွေ ပို့ပေးနော်</p>
+                <a href="https://t.me/Bake_mono_enzo" target="_blank" class="tg-link">ကိုကို့ Tg acc သို့သွားရန် (@Bake_mono_enzo)</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkLogin() {
+            const dateVal = document.getElementById('dateInput').value.trim();
+            const ageVal = document.getElementById('ageInput').value.trim();
+            const errorMsg = document.getElementById('errorMsg');
+
+            // သတ်မှတ်ထားသော စကားဝှက် (Anniversary: 29.9.2026 နှင့် အသက်: 17)
+            if (dateVal === '29.9.2026' && ageVal === '17') {
+                document.getElementById('step1').classList.remove('active');
+                document.getElementById('step2').classList.add('active');
+            } else {
+                errorMsg.style.display = 'block';
+            }
+        }
+
+        function openEnvelope() {
+            document.getElementById('loveLetterText').style.display = 'block';
+            document.getElementById('signatureText').style.display = 'block';
+            document.getElementById('toStep3Btn').style.display = 'block';
+        }
+
+        function goToStep3() {
+            document.getElementById('step2').classList.remove('active');
+            document.getElementById('step3').classList.add('active');
+        }
+
+        let selectedCount = 0;
+        function selectGift(element) {
+            if (element.classList.contains('selected')) {
+                element.classList.remove('selected');
+                selectedCount--;
+            } else {
+                if (selectedCount >= 3) {
+                    alert("သဲလေးရေ... လက်ဆောင် ၃ ခု ရွေးပြီးပါပြီ။ ထပ်ရွေးလို့မရတော့ပါဘူးနော် ❤️️");
+                    return;
+                }
+                element.classList.add('selected');
+                selectedCount++;
+            }
+        }
+    </script>
+</body>
+</html>
